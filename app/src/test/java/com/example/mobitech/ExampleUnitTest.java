@@ -1,4 +1,4 @@
-package com.example.mobiledebugproject;
+package com.example.mobitech;
 
 import org.junit.Test;
 

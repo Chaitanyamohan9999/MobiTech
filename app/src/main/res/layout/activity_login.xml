@@ -1,126 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_background"
+    tools:context="com.example.mobitech.LoginActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
     android:orientation="vertical"
-    android:padding="10dp">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    android:layout_gravity="center"
+    >
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/icon"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:text="Welcome to MobiTech"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableTop="@drawable/logo"
-            android:drawablePadding="10dp"
-            android:gravity="center_horizontal"
-            android:text="FIND"
-            android:textAllCaps="true"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Username"
+        android:textColorHint="#000000"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit"
+        android:padding="10dp"
+        />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="E-MAIL"
-            android:textColor="@android:color/black" />
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:textColorHint="#000000"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/ic_lock"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edit"
+        android:padding="10dp"
+        />
 
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_text_bg"
-            android:inputType="textEmailAddress"
-            android:padding="10dp" />
+    <TextView
+        android:id="@+id/etForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-medium"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        android:layout_marginRight="35dp"
+        />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="PASSWORD"
-            android:textColor="@android:color/black" />
+    <Button
+        android:id="@+id/etLogin"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="Login"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        />
 
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edit_text_bg"
-            android:inputType="textPassword"
-            android:padding="10dp" />
+    <TextView
+        android:id="@+id/etRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register Now!"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif-medium"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        android:layout_marginRight="35dp"
+        />
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="@dimen/margin_20"
-                android:layout_marginRight="30dp"
-                android:gravity="center"
-                android:text="Forgot password"
-                android:textColor="@android:color/black" />
-
-            <TextView
-                android:id="@+id/tvClickHere"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="@string/click_here"
-                android:textColor="@android:color/black" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvSignUp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="New User SIGN UP?"
-            android:textColor="@android:color/black" />
-
-        <TextView
-            android:id="@+id/tvGuestUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="Guest User"
-            android:textColor="@android:color/black" />
-
-        <TextView
-            android:id="@+id/tvLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/black"
-            android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingTop="5dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="5dp"
-            android:text="LOGIN"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 </LinearLayout>
+
+
+
+
+    </LinearLayout >
