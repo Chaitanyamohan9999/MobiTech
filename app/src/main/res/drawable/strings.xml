@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<resources></resources>
+    <string name ="Mobitech"></string>
+    <string name="menu_settings">settings</string>
+</selector>resources>
+</selector>
