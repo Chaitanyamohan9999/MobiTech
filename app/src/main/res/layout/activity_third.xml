@@ -22,7 +22,20 @@
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:background="@color/colorYellow"
-        android:textSize="18sp"
-        android:layout_marginTop="100dp"/>
+        android:text="any complaints? reach us here"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="call us" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to main menu" />
 </LinearLayout>
