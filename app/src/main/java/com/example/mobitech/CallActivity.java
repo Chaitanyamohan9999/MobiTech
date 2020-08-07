@@ -16,7 +16,7 @@ import androidx.core.app.ActivityCompat;
 
 public class CallActivity extends AppCompatActivity {
     private Button button;
-
+public int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
