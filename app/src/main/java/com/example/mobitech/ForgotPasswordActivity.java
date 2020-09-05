@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.shopping.electronics.utils.AppConstants;
+import com.example.mobitech.AppConstants;
 
 
 public class ForgotPasswordActivity extends CommonActivity {
