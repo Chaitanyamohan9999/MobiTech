@@ -2,6 +2,9 @@ package com.example.mobitech;
 
 import android.graphics.Bitmap;
 
+/**
+ * This class deals with details of a product
+ */
 public class CustomList {
 
     public String name;

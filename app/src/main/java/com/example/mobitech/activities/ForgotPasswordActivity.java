@@ -1,4 +1,4 @@
-package com.example.mobitech;
+package com.example.mobitech.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.mobitech.AppConstants;
+import com.example.mobitech.R;
+import com.example.mobitech.models.UserDo;
 
 
+/**
+ * This class deals with password reset
+ */
 public class ForgotPasswordActivity extends CommonActivity {
 
     private EditText etEmail, etPassword, etRenterPassword;
@@ -66,6 +70,9 @@ public class ForgotPasswordActivity extends CommonActivity {
         });
     }
 
+    /**
+     * This method is used to set a new password
+     */
     private void setNewPassword() {
         UserDo userDo = (UserDo) getObject(AppConstants.userFile);
         if(!userDo.email.equalsIgnoreCase(etEmail.getText().toString().trim())){

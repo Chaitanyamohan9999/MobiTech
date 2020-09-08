@@ -1,4 +1,4 @@
-package com.example.mobitech;
+package com.example.mobitech.activities;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -14,8 +14,16 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.regex.Pattern;
 
+/**
+ * This class deals with common functionalities for application
+ */
 public class CommonActivity extends AppCompatActivity {
 
+    /**
+     * Checks for Internet connection
+     * @param context ApplicationContext
+     * @return returns boolean value
+     */
     protected boolean isNetworkConnectionAvailable(Context context) {
         boolean isNetworkConnectionAvailable = false;
         try {
@@ -31,6 +39,11 @@ public class CommonActivity extends AppCompatActivity {
 
         return isNetworkConnectionAvailable;
     }
+
+    /**
+     * Common error message to show in application
+     * @param message Message to be shown
+     */
     protected void showErrorMessage(String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
@@ -42,6 +55,11 @@ public class CommonActivity extends AppCompatActivity {
         return EMAIL_ADDRESS_PATTERN.matcher(email).matches();
     }
 
+    /**
+     * Stores in application data
+     * @param fileName
+     * @param object
+     */
     protected void saveObject(String fileName, Object object) {
         try {
 //            String path = Environment.getDownloadCacheDirectory()+"/"+getString(R.string.app_name)+"/";
@@ -57,6 +75,11 @@ public class CommonActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Retrieves from application data
+     * @param fileName
+     * @return
+     */
     protected Object getObject(String fileName) {
         Object object = null;
         try {

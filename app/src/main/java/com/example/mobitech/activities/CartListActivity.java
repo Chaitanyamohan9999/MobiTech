@@ -1,4 +1,4 @@
-package com.example.mobitech;
+package com.example.mobitech.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,17 +17,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.shopping.electronics.utils.LoadProducts;
+
+import com.example.mobitech.R;
+import com.example.mobitech.models.ProductDo;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+/**
+ * This class deals with products added to cart
+ */
 public class CartListActivity extends AppCompatActivity {
 
     private RecyclerView rvCartProducts;
     private ImageView ivBack;
     private TextView tvTotalPrice, tvDeliveryFee, tvTotalAmount;
     private Button tvPlaceOrder;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +51,7 @@ public class CartListActivity extends AppCompatActivity {
                 finish();
             }
         });
-        ArrayList<ProductDo> cartProductDos = LoadProducts.cartProductDos;
+        final ArrayList<ProductDo> cartProductDos = LoadProducts.cartProductDos;
         CartItemAdapter cartItemAdapter = new CartItemAdapter(CartListActivity.this, cartProductDos);
         rvCartProducts.setAdapter(cartItemAdapter);
         bindData();
@@ -55,16 +60,24 @@ public class CartListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(CartListActivity.this, PaymentActivity.class);
                 startActivity(intent);
-            }
+                }
+
         });
     }
 
+    /**
+     * This method is used to bind the backend data with front end product
+     */
     private void bindData() {
         try {
             if (LoadProducts.cartProductDos!=null && LoadProducts.cartProductDos.size()>0){
                 double totalPrice = 0;
                 for (int i=0;i<LoadProducts.cartProductDos.size();i++){
-                    totalPrice = totalPrice + (LoadProducts.cartProductDos.get(i).quantity * LoadProducts.cartProductDos.get(i).price);
+                   // totalPrice = totalPrice + (LoadProducts.cartProductDos.get(i).quantity * LoadProducts.cartProductDos.get(i).price);
+                    int price = Integer.parseInt(LoadProducts.cartProductDos.get(i).price);
+                    int quantity = Integer.parseInt(LoadProducts.cartProductDos.get(i).quantity);
+                    totalPrice = totalPrice + (quantity * price);
+
                 }
                 tvTotalPrice.setText("$"+totalPrice);
                 tvDeliveryFee.setText("$10");
@@ -87,6 +100,12 @@ public class CartListActivity extends AppCompatActivity {
             this.cartProductDos = cartProductDos;
         }
 
+        /**
+         * Called when RecyclerView needs a new RecyclerView.ViewHolder of the given type to represent an item.
+         * @param parent The ViewGroup into which the new View will be added after it is bound to an adapter position.
+         * @param viewType The view type of the new View.
+         * @return
+         */
         @NonNull
         @Override
         public CartHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -99,16 +118,26 @@ public class CartListActivity extends AppCompatActivity {
             bindData();
             notifyDataSetChanged();
         }
+
+        /**
+         *Called by RecyclerView to display the data at the specified position.
+         * @param holder The ViewHolder which should be updated to represent the contents of the item at the given position
+         * @param position The position of the item within the adapter's data set.
+         */
         @Override
         public void onBindViewHolder(@NonNull CartHolder holder, final int position) {
 
             holder.tvItemName.setText(cartProductDos.get(position).productName);
-            holder.tvItemPrice.setText(String.valueOf(cartProductDos.get(position).quantity * cartProductDos.get(position).price));
+            int price = Integer.parseInt(cartProductDos.get(position).price);
+            int quantity = Integer.parseInt(cartProductDos.get(position).quantity);
+            holder.tvItemPrice.setText(String.valueOf(quantity * price));
             holder.tvItemDescription.setText(String.valueOf(cartProductDos.get(position).description));
             holder.tvQty.setText(String.valueOf(cartProductDos.get(position).quantity));
-            if(cartProductDos.get(position).image != 0){
-                holder.ivItemImage.setImageResource(cartProductDos.get(position).image);
-            }
+//            if(cartProductDos.get(position).image != 0){
+//                holder.ivItemImage.setImageResource(cartProductDos.get(position).image);
+//            }
+            Picasso.get().load(cartProductDos.get(position).image).into(holder.ivItemImage);
+
             holder.tvRemove.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -118,12 +147,19 @@ public class CartListActivity extends AppCompatActivity {
             });
         }
 
+        /**
+         * This method returns the count of products in cart
+         * @return No of products in cart
+         */
         @Override
         public int getItemCount() {
             return cartProductDos != null ? cartProductDos.size() : 0;
         }
     }
 
+    /**
+     * This class holds the references of a cart product need to be set to recyclerview
+     */
         public class CartHolder extends RecyclerView.ViewHolder {
 
             private ImageView ivItemImage;

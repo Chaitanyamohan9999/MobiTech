@@ -1,4 +1,4 @@
-package com.example.mobitech;
+package com.example.mobitech.activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -18,11 +18,16 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
+import com.shopping.electronics.*;
+import com.shopping.electronics.models.UserDo;
 import com.shopping.electronics.utils.AppConstants;
 import com.shopping.electronics.utils.CircleImageView;
 
 import java.io.File;
 
+/**
+ * This class deals with profile related activities
+ */
 public class ProfileActivity extends CommonActivity {
 
     private static final String TAG = "ProfileActivity";
@@ -134,6 +139,12 @@ public class ProfileActivity extends CommonActivity {
 
     }
 
+    /**
+     * Checks for permissions if granted or denied
+     * @param context the application context
+     * @param permissions Permissions to be checked if granted or denied
+     * @return boolean value as true if permission granted.
+     */
     private boolean hasPermissions(Context context, String... permissions) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
             for (String permission : permissions) {
@@ -144,6 +155,13 @@ public class ProfileActivity extends CommonActivity {
         }
         return true;
     }
+
+    /**
+     * Callback for the result from requesting permissions. This method is invoked for every call on ActivityCompat.requestPermissions(android.app.Activity, String[], int).
+     * @param requestCode The request code passed in ActivityCompat.requestPermissions(android.app.Activity, String[], int)
+     * @param permissions The requested permissions. Never null.
+     * @param grantResults he grant results for the corresponding permissions which is either PackageManager.PERMISSION_GRANTED or PackageManager.PERMISSION_DENIED. Never null.
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode,permissions,grantResults);
@@ -162,6 +180,10 @@ public class ProfileActivity extends CommonActivity {
         }
     }
 
+    /**
+     * This method is called to choose or take a profile picture
+     * @param requestCode
+     */
     private void selectProfilePic(int requestCode){
         String userId = userDo.name;
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -178,6 +200,12 @@ public class ProfileActivity extends CommonActivity {
         startActivityForResult(chooser, requestCode);
     }
 
+    /**
+     * Called when an activity you launched exits, giving you the requestCode you started it with, the resultCode it returned, and any additional data from it.
+     * @param requestCode The integer request code originally supplied to startActivityForResult(), allowing you to identify who this result came from.
+     * @param resultCode The integer result code returned by the child activity through its setResult().
+     * @param data An Intent, which can return result data to the caller (various data can be attached to Intent "extras").
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -192,6 +220,10 @@ public class ProfileActivity extends CommonActivity {
         }
     }
 
+
+    /**
+     * This method is used to bind the backend data with front end product
+     */
     private void bindData(){
         try {
             userDo = (UserDo) getObject(AppConstants.userFile);

@@ -1,4 +1,4 @@
-package com.example.mobitech;
+package com.example.mobitech.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.shopping.electronics.*;
+import com.shopping.electronics.models.UserDo;
 import com.shopping.electronics.utils.AppConstants;
 
+/**
+ * This class deals with registration related activities
+ */
 public class RegisterActivity extends CommonActivity {
 
     private EditText etName, etEmail, etPhone, etCountry, etCity, etState, etZipCode, etPassword, etRenterPassword;
@@ -98,6 +103,9 @@ public class RegisterActivity extends CommonActivity {
         });
     }
 
+    /**
+     * Obtaining references of views
+     */
     private void initialiseControls(){
         rgGender                            = findViewById(R.id.rgGender);
         rbFemale                            = findViewById(R.id.rbFemale);
@@ -117,6 +125,9 @@ public class RegisterActivity extends CommonActivity {
         tvLogin                             = findViewById(R.id.tvLogin);
     }
 
+    /**
+     * This method registers a user to local store application data
+     */
     private void doRegistration(){
         UserDo userDo = new UserDo();
         userDo.name  = etName.getText().toString().trim();

@@ -1,7 +1,10 @@
-package com.example.mobitech;
+package com.example.mobitech.models;
 
 import java.io.Serializable;
 
+/**
+ * This class is model file for user related details
+ */
 public class UserDo implements Serializable {
 
     public String userId = "";
