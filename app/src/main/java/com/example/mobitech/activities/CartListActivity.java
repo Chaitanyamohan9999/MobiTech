@@ -17,9 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.example.mobitech.R;
+import com.example.mobitech.*;
 import com.example.mobitech.models.ProductDo;
+import com.example.mobitech.utils.LoadProducts;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

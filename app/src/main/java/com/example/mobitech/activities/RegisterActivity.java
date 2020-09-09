@@ -8,9 +8,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.shopping.electronics.*;
-import com.shopping.electronics.models.UserDo;
-import com.shopping.electronics.utils.AppConstants;
+import com.example.mobitech.R;
+import com.example.mobitech.models.UserDo;
+import com.example.mobitech.utils.AppConstants;
+
 
 /**
  * This class deals with registration related activities

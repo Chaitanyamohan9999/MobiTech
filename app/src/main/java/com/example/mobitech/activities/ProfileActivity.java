@@ -18,10 +18,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
-import com.shopping.electronics.*;
-import com.shopping.electronics.models.UserDo;
-import com.shopping.electronics.utils.AppConstants;
-import com.shopping.electronics.utils.CircleImageView;
+
+import com.example.mobitech.R;
+import com.example.mobitech.models.UserDo;
+import com.example.mobitech.utils.AppConstants;
+import com.example.mobitech.utils.CircleImageView;
 
 import java.io.File;
 

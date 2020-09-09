@@ -8,8 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.mobitech.R;
+import com.example.mobitech.*;
+import com.example.mobitech.utils.LoadProducts;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 

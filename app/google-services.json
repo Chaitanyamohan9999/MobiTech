@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "180423189465",
+    "firebase_url": "https://edeal-9ad67.firebaseio.com",
+    "project_id": "edeal-9ad67",
+    "storage_bucket": "edeal-9ad67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180423189465:android:08d76a5e27aedafe616fc8",
+        "android_client_info": {
+          "package_name": "com.example.mobitech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180423189465-5ckm25f6eh0gsh3ctkue810e62smv8he.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobitech",
+            "certificate_hash": "553f609be9a237764a712668a1d794044c7b7ec9"
+          }
+        },
+        {
+          "client_id": "180423189465-4gmiiqcs0o5g38ej2uioprkkjc0rsei9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChSRCUaXzxtBMcQzcVHl_7H2_Zq66nkcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180423189465-4gmiiqcs0o5g38ej2uioprkkjc0rsei9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

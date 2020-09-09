@@ -13,14 +13,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobitech.ProductListAdapter;
+import com.example.mobitech.R;
+import com.example.mobitech.models.ProductDo;
+import com.example.mobitech.utils.CartChangeListener;
+import com.example.mobitech.utils.LoadProducts;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.shopping.electronics.*;
-import com.shopping.electronics.ProductListAdapter;
-import com.shopping.electronics.models.ProductDo;
-import com.shopping.electronics.utils.CartChangeListener;
-import com.shopping.electronics.utils.LoadProducts;
 
 import java.util.ArrayList;
+
 
 /**
  * This class deals with available products and their details

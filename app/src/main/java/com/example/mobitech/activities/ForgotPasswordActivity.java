@@ -6,8 +6,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.mobitech.R;
+import com.example.mobitech.*;
 import com.example.mobitech.models.UserDo;
+import com.example.mobitech.utils.AppConstants;
 
 
 /**
