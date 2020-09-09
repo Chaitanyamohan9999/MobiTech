@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MobiTech</string>
+    <string name="app_name">E-Deals</string>
     <string name="network_error">Could not connect at the movement make sure your mobile has Internet connection, please  try again later</string>
     <string name="card_holder_name">Cardholder\'s Name (As it Appears on Card)</string>
     <string name="expiry_date">Expiry Date(MM/YYYY)</string>
